@@ -1,0 +1,14 @@
+[
+  {
+    "ParameterKey": "ReadCapacityUnits",
+    "ParameterValue": "10"
+  },
+  {
+    "ParameterKey": "WriteCapacityUnits",
+    "ParameterValue": "20"
+  },
+  {
+    "ParameterKey": "TableName",
+    "ParameterValue": "UsersTable"
+  }
+]
