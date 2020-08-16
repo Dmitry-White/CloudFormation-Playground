@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  ReadCapacityUnits:
+    Description: Table Read Capacity
+    Type: Number
+    Default: 5
+    MinValue: 1
+    MaxValue: 20
+    ConstraintDescription: must be between MinValue and MaxValue
+  WriteCapacityUnits:
+    Description: Table Write Capacity
+    Type: Number
+    Default: 5
+    MinValue: 1
+    MaxValue: 20
+    ConstraintDescription: must be between MinValue and MaxValue
+  TableName:
+    Description: Name of the table
+    Type: String
+
+Resources:
+  userDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Ref TableName
+      AttributeDefinitions:
+        - AttributeName: "Id"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "Id"
+          KeyType: "HASH"
+      ProvisionedThroughput:
+        ReadCapacityUnits: !Ref ReadCapacityUnits
+        WriteCapacityUnits: !Ref WriteCapacityUnits
+
+Outputs:
+  DynamoDbArn:
+    Value: !GetAtt userDynamoDBTable.Arn
+    Description: Arn of the user dynamodb
+    Export:
+      Name: DynamoDBArn
