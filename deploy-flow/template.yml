@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Design Patterns Website
+
+Parameters:
+  WebsiteBucketName:
+    Description: Name of the website bucket
+    Type: String
+  IndexDocumentUrl:
+    Description: Index document URL
+    Type: String
+
+Resources:
+    Bucket:
+        Type: AWS::S3::Bucket
+        Properties:
+            BucketName: !Ref WebsiteBucketName
+            AccessControl: PublicRead
+            WebsiteConfiguration:
+                IndexDocument: !Ref IndexDocumentUrl
+Outputs:
+    WebsiteURL:
+        Value: !GetAtt Bucket.WebsiteURL
+        Description: URL for website hosted on S3

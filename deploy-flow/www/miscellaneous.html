@@ -1,0 +1,234 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Design Patterns</title>
+</head>
+
+<body>
+  <section id="header">
+    <nav>
+      <div class="nav-wrapper indigo">
+        <a href="index.html" class="brand-logo center">Design Patterns</a>
+        <ul class="left hide-on-med-and-down">
+          <li><a href="creational.html">Creational</a></li>
+          <li><a href="structural.html">Structural</a></li>
+          <li><a href="behavioral.html">Behavioral</a></li>
+          <li class="active"><a href="miscellaneous.html">Miscellaneous</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+  <section id="nested-ternaries" style="width: 30%; margin: 20px; float: left;">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator"
+          src="https://i.ytimg.com/vi/oAEfKLI8iKk/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLByKxlMvpATANL249V__Lc6R_KpHQ">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">
+          Nested Ternaries Pattern<i class="material-icons right">more_vert</i>
+        </span>
+        <p><a target="_blank" href="https://www.youtube.com/watch?v=oAEfKLI8iKk">Jonathan Martin's Explanation</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Nested Ternaries Pattern<i
+            class="material-icons right">close</i></span>
+        <p>
+          Typically, if-else statements could be described with
+          switch statements, except for the cases where test conditions
+          could not be described with strict equality.
+        </p>
+        <p>
+          Ternary operator is essentially an if-else "expression".
+          While "if-else statement" runs statements but doesn't return anything,
+          a "ternary expression" evaluates and returns a value of one of the
+          two expressions.
+        </p>
+        <p>
+          Syntax of "ternary expression" is just a side benefit.
+          The real benefit: <br />
+          - "if-else statements" are popular in imperative programming
+          which is build on conrol flow. Such code tends to have several
+          entry and exit points.<br />
+          - "ternary expressions" help us think about data flow
+          and produce more declarative code. Such code tends to flow
+          in the same way for any inputs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="router-pattern" style="width: 30%; margin: 20px; float: left;">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator"
+          src="https://i.ytimg.com/vi/wjzl3M7-Wpw/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAq9dvfDnfAspQUpjTxcGGXEjLiuA">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">
+          Router Pattern<i class="material-icons right">more_vert</i>
+        </span>
+        <p><a target="_blank" href="https://www.youtube.com/watch?v=wjzl3M7-Wpw">Jonathan Martin's Explanation</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Router Pattern<i class="material-icons right">close</i></span>
+        <p>
+          Router pattern helps us turn a giant if-else/switch statement inside out
+          by decoupling the responsibility of routing logic from the business
+          logic of the individual cases.
+        </p>
+        <p>
+          With "Router pattern" the control flow is replaced with a data structure -
+          many problems that traditionally solved algorithmically can be described much more
+          elegantly with a data structure. In backend terminology, "responses" are "routes"
+          and "responder" is "router".
+        </p>
+        <p>
+          "Router pattern" helps us discover common needs across if-else/switch cases and
+          provides a flexible interface to DRY them up. With each case extracted into a function,
+          we could unit test each response without going through routing logic first.
+        </p>
+        <p>
+          "Router pattern" helps solve the same problems in FP that polymorphism does in OOP.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="enforcer-pattern" style="width: 30%; margin: 20px; float: left;">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator"
+          src="https://i.ytimg.com/vi/H-L6BMD4hN8/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAJi31wouto08kJkmtrHBb0YtzZ5Q">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">
+          Enforcer Pattern<i class="material-icons right">more_vert</i>
+        </span>
+        <p><a target="_blank" href="https://www.youtube.com/watch?v=H-L6BMD4hN8">Jonathan Martin's Explanation</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Enforcer Pattern<i
+            class="material-icons right">close</i></span>
+        <p>
+          Terse, non-cascading if-else statements that get copy-pasted across functions,
+          often appear at the beginning of a function as a guard clause.
+        </p>
+        <p>
+          Enforcer Pattern is Higher-Order Function with a guard clause
+          that enforces some authorization rule, like requiring the word “sudo”
+          or checking if the current user is an admin.
+        </p>
+        <p>
+          It’s as though we’re writing immutable code, and like immutable data structures,
+          this style of coding has great design benefits and prevents regressions.
+          None of our existing unit tests will change, and the new code already follows
+          the single responsibility principle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="error-handling-pattern" style="width: 30%; margin: 20px; float: left;">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator"
+          src="https://i.ytimg.com/vi/d5eyTy0QOgg/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCcpeGUXwOgKBh4KDgxBCZzY-Di5g">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">
+          Error Handling Pattern<i class="material-icons right">more_vert</i>
+        </span>
+        <p><a target="_blank" href="https://www.youtube.com/watch?v=d5eyTy0QOgg">Jonathan Martin's Explanation</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Error Handling Pattern<i
+            class="material-icons right">close</i></span>
+        <p>
+          If we take advantage of currying,
+          we can eliminate a lot of the extra function calls and argument gathering.
+        </p>
+        <p>
+          This style of creating functions without first gathering
+          and passing around all their arguments is called Point-free style
+          (or Tacit Programming).
+        </p>
+        <p>
+          The best way to combine behaviors is through composition.
+          Rather than cascading if-else statements,
+          complex multiple error handling logic,
+          or try-catch syntax,
+          we handled two kinds of errors through composition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="null-object-pattern" style="width: 30%; margin: 20px; float: left;">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator"
+          src="https://i.ytimg.com/vi/N23mqZBP0kQ/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBTDeswRFlZfQCUL6JOZmQT34a3cQ">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">
+          Null Object Pattern<i class="material-icons right">more_vert</i>
+        </span>
+        <p><a target="_blank" href="https://www.youtube.com/watch?v=N23mqZBP0kQ">Jonathan Martin's Explanation</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Null Object Pattern<i
+            class="material-icons right">close</i></span>
+        <p>
+          Each line of code could be defensive because
+          it can’t safely trust the results of lines before it.
+          With the variation of the Null Object Pattern,
+          we can replace edge cases with benign values.
+          Once we did that, the boundaries became detangled.
+        </p>
+        <p>
+          By substituting a benign value as early as possible,
+          we don’t have to be defensive later on.
+          In OOP, this benign value is called a Null Object.
+          It’s often a subclass of the expected object type,
+          and should respond to the same messages.
+        </p>
+        <p>
+          In FP we won’t create a Null Object class,
+          but we can still lift this Null Object into a variable
+          called nullPayload to better communicate intent.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="miscellaneous/nested-ternaries.js"></script>
+  <script src="miscellaneous/router-pattern.js"></script>
+
+  <script src="miscellaneous/enforcer-pattern/index.js"></script>
+  <script src="miscellaneous/enforcer-pattern/1. naive-enforcer.js"></script>
+  <script src="miscellaneous/enforcer-pattern/2. better-enforcer.js"></script>
+  <script src="miscellaneous/enforcer-pattern/3. best-enforcer.js"></script>
+
+  <script src="miscellaneous/error-handling/index.js"></script>
+  <script src="miscellaneous/error-handling/1. naive-handling.js"></script>
+  <script src="miscellaneous/error-handling/2. better-handling.js"></script>
+  <script src="miscellaneous/error-handling/3. even-better-handling.js"></script>
+  <script src="miscellaneous/error-handling/4. best-handling.js"></script>
+
+  <script src="miscellaneous/null-object/index.js"></script>
+  <script src="miscellaneous/null-object/1. naive-handling.js"></script>
+  <script src="miscellaneous/null-object/2. better-handling.js"></script>
+  <script src="miscellaneous/null-object/3. best-null-object.js"></script>
+
+</body>
+
+</html>
