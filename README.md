@@ -21,3 +21,9 @@ https://adamtheautomator.com/aws-cli-cloudformation/
 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-cli-deploy.html
 
 https://nickolaskraus.org/articles/creating-a-static-website-using-cloudformation/
+
+## Packaging External Resources
+
+https://aws.nz/best-practice/cloudformation-package-deploy/
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html

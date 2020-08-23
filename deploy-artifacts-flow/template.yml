@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: External Resources Template
+
+Parameters:
+  ArtifactsBucketName:
+    Description: Name of the artifacts bucket
+    Type: String
+
+Resources:
+  CommonStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: stacks/common.yml
+
+  LambdaOne:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: nodejs12.x
+      Role: !GetAtt CommonStack.Outputs.LambdaExecutionRoleArn
+      Handler: lambdaOne.handler
+      Code: lambdas/
+
+  LambdaTwo:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: nodejs12.x
+      Role: !GetAtt CommonStack.Outputs.LambdaExecutionRoleArn
+      Handler: index.handler
+      Code: lambdas/lambdaTwo/
+
+Outputs:
+  ArtifactsBucketName:
+    Value: !Ref ArtifactsBucketName
+    Description: Reference to the Bucket
