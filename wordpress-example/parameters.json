@@ -1,0 +1,18 @@
+[
+  {
+    "ParameterKey": "DBPassword",
+    "ParameterValue": "password1"
+  },
+  {
+    "ParameterKey": "DBRootPassword",
+    "ParameterValue": "password2"
+  },
+  {
+    "ParameterKey": "DBUser",
+    "ParameterValue": "admin"
+  },
+  {
+    "ParameterKey": "KeyName",
+    "ParameterValue": "wordpress-example"
+  }
+]
