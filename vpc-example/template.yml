@@ -28,6 +28,10 @@ Resources:
         - Key: Scope
           Value: Lab
 
+  # An Internet gateway serves two purposes:
+  # 1. Provide a target in your VPC route tables for Internet-routable traffic,
+  # 2. Perform network address translation (NAT) for instances
+  # that have been assigned public IPv4 addresses.
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
@@ -37,6 +41,9 @@ Resources:
         - Key: Scope
           Value: Lab
 
+  # In the management console, the Internet Gateway is showing that it is attached to the VPC.
+  # A VPC Gateway Attachment creates a relationship between a VPC and a gateway,
+  # such as this Internet Gateway.
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
@@ -62,6 +69,11 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       CidrBlock: !Ref PrivateCidrBlock
+      # The code is retrieving a list of Availability Zones within the region
+      # and is referencing the first element from the list. 
+      # In this manner, the template can be used in any region
+      # because it retrieves the list of Availability Zones at runtime
+      # rather than having the Availability Zones hard-coded in the template.
       AvailabilityZone: !Select
         - "0"
         - !GetAZs ""
@@ -88,6 +100,8 @@ Resources:
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref InternetGateway
 
+  # A Route Table can be associated with multiple subnets, 
+  # with each association requiring an explicit linkage. 
   PublicSubnetRouteTableAssociation1:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
