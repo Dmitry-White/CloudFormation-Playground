@@ -27,3 +27,15 @@ https://nickolaskraus.org/articles/creating-a-static-website-using-cloudformatio
 https://aws.nz/best-practice/cloudformation-package-deploy/
 
 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html
+
+## EC2 User Data & GIT
+
+https://stackoverflow.com/questions/15904095/how-to-check-whether-my-user-data-passing-to-ec2-instance-working-or-not
+
+https://aws.amazon.com/premiumsupport/knowledge-center/codecommit-git-repositories-ec2/
+
+https://stackoverflow.com/questions/40425201/aws-ubuntu-git-setup-error-fatal-home-not-set
+
+## EC2 Instance Profile
+
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html
